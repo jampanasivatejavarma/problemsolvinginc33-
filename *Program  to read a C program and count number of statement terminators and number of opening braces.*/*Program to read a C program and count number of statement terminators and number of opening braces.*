@@ -1,0 +1,18 @@
+#include<stdio.h>
+main()
+{
+FILE *fp;
+int s=0,b=0; 
+char c;
+fp=fopen(“fib.c”,”r”);
+while((c=getc(fp))!=EOF)
+{
+if(c==’;’)
+s++;
+if(c==’{‘)
+b++;
+}
+fclose(fp);
+printf(“\t\n number of statement terminators=%d”,s);
+printf(“\t\n no of opening braces=%d”,b);
+}
