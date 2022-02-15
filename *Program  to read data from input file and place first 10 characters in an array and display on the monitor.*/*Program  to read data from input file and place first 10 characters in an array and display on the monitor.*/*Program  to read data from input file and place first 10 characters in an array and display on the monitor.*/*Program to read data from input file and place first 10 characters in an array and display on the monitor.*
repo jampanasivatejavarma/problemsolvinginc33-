@@ -1,0 +1,17 @@
+#include<stdio.h>
+main()
+{
+FILE *fp;
+int i=0;
+char c,a[11];
+fp=fopen(“INPUT”,”r”);
+while(i<100)
+{
+c=getc(fp);
+a[i]=c;
+i++;
+}
+fclose(fp);
+a[i]=’\0’;
+puts(a);
+}
