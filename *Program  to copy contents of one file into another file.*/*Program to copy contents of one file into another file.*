@@ -1,0 +1,12 @@
+#include<stdio.h>
+main()
+{
+FILE *fp1,*fp2;
+char s;
+fp1=fopen(“input.txt”,”r”);
+fp2=fopen(“output.txt”,”w”);
+while ((s=getc(fp1))!=EOF)
+putc(s,fp2);
+fclose(fp1);
+fclose(fp2);
+}
