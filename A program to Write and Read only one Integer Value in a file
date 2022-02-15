@@ -1,0 +1,12 @@
+#include<stdio.h>
+main()
+{   int n,m;
+  FILE *fp=fopen("num.txt","w");
+  puts("Enter a number:");
+  scanf("%d",&n);
+  putw(n,fp);  /* printing only integer value  in a file  */
+  fclose(fp);
+  fp=fopen("num.txt","r");
+  m=getw(fp);  /*  reading only integer value from a file  */
+  printf("From File int val=%d",m);
+    }
