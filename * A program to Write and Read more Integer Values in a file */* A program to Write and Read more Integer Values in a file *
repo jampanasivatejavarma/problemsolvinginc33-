@@ -1,0 +1,15 @@
+
+#include<stdio.h>
+main()
+{ int n,m;
+  FILE *fp=fopen("num.txt","w");
+  puts(“Press Cntl+Z to end the values”);
+  puts("Enter the numbers:");
+  while(scanf("%d",&n)!=EOF)
+  putw(n,fp);
+  fclose(fp);
+  fp=fopen("num.txt","r");
+  puts(“Entered values in file are:”);  
+  while((m=getw(fp))!=EOF)
+  printf("%d\n",m);
+    }
