@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+FILE *fp1,*fp2;
+char s,c;
+clrscr();
+printf("\n\n\t one.txt contents are \n\n");
+/*prints contents of file1 on monitor*/
+fp1=fopen("one.txt","r");
+while((c=getc(fp1))!=EOF)
+printf("%c",c);
+fclose(fp1);
+printf("\n\n\t two.txt contents before appending are \n\n");
+/*prints contents of file2 on monitor before appending*/
+fp2=fopen("two.txt","r");
+while((c=getc(fp2))!=EOF)
+printf("%c",c);
+fclose(fp2);
+/*appends contents of file1 to file2*/
+fp1=fopen("one.txt","r");
+fp2=fopen("two.txt","a");
+while((c=getc(fp1))!=EOF)
+putc(c,fp2);
+fcloseall();
+printf("\n\n\t two.txt contents after appending are \n\n");
+/*prints contents of file2 on monitor after appending*/
+fp2=fopen("two.txt","r");
+while((c=getc(fp2))!=EOF)
+printf("%c",c);
+fclose(fp2);
+}
